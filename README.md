@@ -1,9 +1,6 @@
 # 🤖 Discord.js Bot Template (v14)
 
-<img src="https://img.shields.io/github/license/agonkolgeci/discord-js-bot-template?style=for-the-badge&color=blue" alt="License" />
-<img src="https://img.shields.io/badge/node.js-%3E%3D%2016.9.1-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
-<img src="https://img.shields.io/badge/discord.js-v14.26.4-5865F2?style=for-the-badge&logo=discord" alt="Discord.js Version" />
-<img src="https://img.shields.io/badge/database-mongoose-red?style=for-the-badge&logo=mongodb" alt="Database Mongoose" />
+[![License](https://img.shields.io/github/license/agonkolgeci/discord-js-bot-template?style=for-the-badge&color=blue)](https://github.com/agonkolgeci/discord-js-bot-template) [![Node.js Version](https://img.shields.io/badge/node.js-%3E%3D%2016.9.1-green?style=for-the-badge&logo=node.js)](https://nodejs.org) [![Discord.js Version](https://img.shields.io/badge/discord.js-v14.26.4-5865F2?style=for-the-badge&logo=discord)](https://discord.js.org) [![Database Mongoose](https://img.shields.io/badge/database-mongoose-red?style=for-the-badge&logo=mongodb)](https://mongoosejs.com)
 
 ---
 
