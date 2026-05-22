@@ -7,7 +7,7 @@
 
 import { ShardingManager } from "discord.js";
 
-import logger from "./utils/logger.js";
+import logger from "./utils/Logger.js";
 import dotenv from "dotenv";
 
 await dotenv.config();

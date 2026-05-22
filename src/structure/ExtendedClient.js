@@ -1,6 +1,6 @@
 import { Client, Collection, Partials, GatewayIntentBits } from "discord.js";
 
-import logger from "../utils/logger.js";
+import logger from "../utils/Logger.js";
 
 import MessageFormatter from "./messages/MessageFormatter.js";
 
@@ -21,8 +21,8 @@ export default class ExtendedClient extends Client {
 
     constructor(config) {
         super({
-            intents: [Object.keys(GatewayIntentBits)],
-            partials: [Object.keys(Partials)],
+            intents: Object.keys(GatewayIntentBits),
+            partials: Object.keys(Partials),
             presence: {
                 activities: [{
                     name: "intercepting Star Link satellites...",
@@ -34,6 +34,7 @@ export default class ExtendedClient extends Client {
         });
 
         this.config = config;
+        this.logger = logger;
     }
 
     /**

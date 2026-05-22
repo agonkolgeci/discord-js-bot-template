@@ -6,13 +6,14 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "find src -name \"*.js\" -exec node --check {} +"
   },
   "license": "GNU General Public License v3.0",
   "dependencies": {
-    "chalk": "^5.3.0",
-    "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1",
-    "mongoose": "^8.0.1"
+    "chalk": "^5.6.2",
+    "discord.js": "^14.26.4",
+    "dotenv": "^17.4.2",
+    "mongoose": "^8.24.0"
   }
 }

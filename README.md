@@ -1,164 +1,209 @@
-# discord-handler-js v14 🤖
-discord-handler-js is an optimized Discord bot structure that lets you easily create your own Discord Bot.
+# 🤖 Discord Handler JS (v14)
 
-> ### Further information
-> - The discord-handler-js uses [ES6 modules](https://www.google.com/search?q=ES6+modules).
-> - The discord-handler-js uses the latest version of [discord.js v^1.14](https://github.com/discordjs/discord.js/releases). 
+<p align="center">
+  <img src="https://img.shields.io/github/license/agonkolgeci/discord-handler-js?style=for-the-badge&color=blue" alt="License" />
+  <img src="https://img.shields.io/badge/node.js-%3E%3D%2016.9.1-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
+  <img src="https://img.shields.io/badge/discord.js-v14.26.4-5865F2?style=for-the-badge&logo=discord" alt="Discord.js Version" />
+  <img src="https://img.shields.io/badge/database-mongoose-red?style=for-the-badge&logo=mongodb" alt="Database Mongoose" />
+</p>
 
-## Table of contents 📃
+---
 
-- [Requirements](#requirements)
-- [Installation](#installation)
+**Discord Handler JS** is an ultra-optimized, production-ready Discord bot structure/template designed for **Discord.js v14**. Utilizing **ES6 modules**, this boilerplate handles commands, components (buttons, modals, select menus), and events dynamically, enabling you to build stable, scalable, and responsive Discord bots in minutes.
 
+## ✨ Key Features
 
-- [Application Sharding](#application-sharding)
-- [Application Commands](#application-commands):
-  - Slash commands
-  - User contexts
-  - Message contexts
-- [Application Components](#application-components):
-  - Buttons
-  - Modals
-  - Select Menus
-- [Application Events](#application-events)
+*   ⚡ **Full ES6 Module Support**: Modern import/export syntax throughout the codebase.
+*   📦 **Dynamic Command Loading**: Full support for Slash commands, User contexts, and Message contexts.
+*   🧩 **Interactive Components Handler**: Seamless routing for Buttons, Modals, and Select Menus.
+*   📡 **Automated REST Command Deployments**: Automatic registration of application commands to the Discord API.
+*   💎 **Sharding Out-of-the-Box**: Effortlessly scale your application with a built-in Sharding Manager.
+*   🎨 **Custom Logger**: Beautiful, colored console logging powered by `Chalk`.
+*   🛠️ **JSDoc Type Definitions**: Full IDE auto-completion suggestions for faster development.
+*   🍃 **Mongoose Integration**: Ready-to-go MongoDB connection configuration (completely optional).
 
+---
 
-- [Custom Logger](#custom-logger)
-- [Client Message Formatter](#client-message-formatter)
-- [MongoDB (Optional)](#mongodb-optional)
+## 📂 Project Structure
 
-
-- [Credits](#credits)
-
-## Requirements
-
-### Environnement
-- [Node.js v^16.9.1](https://nodejs.org/) or newer
-
-### Prelude
-- [Discord Application](https://discord.com/developers/docs/getting-started)'s credentials
-
-# Installation
-Please read [Requirements](#requirements) before starting installation.
-
-1. **Install this project (2 options):**
-   - Using command: [`git clone https://github.com/agonkolgeci/discord-handler-js.git`](https://git-scm.com/downloads)
-   - Download [the project ZIP](https://github.com/agonkolgeci/discord-handler-js/archive/refs/heads/master.zip) then extract it
-
-
-2. **Open the new folder with your favorite text editor**
-
-
-3. **Configure the following files:**
-   - `.env` - Application Credentials
-   - `src/resources/config.js` - Client Configuration
-
-
-4. **Install required packages:**
-```shell
-npm install
+```text
+discord-handler-js/
+├── .github/
+│   └── dependabot.yml       # Automatic weekly dependency updates
+├── src/
+│   ├── commands/            # Bot Commands (Slash, Context Menus)
+│   │   └── utilities/       # Grouped command folders
+│   ├── components/          # UI Components (Buttons, Modals, Selects)
+│   ├── events/              # Event Listeners (client ready, interaction, etc.)
+│   ├── handlers/            # Core loaders (commands, components, events, rest, DB)
+│   ├── resources/           # Configuration files
+│   ├── structure/           # Custom Client class & formatting helpers
+│   ├── utils/               # Logger & error structures
+│   ├── index.js             # Main entry point (Normal Mode)
+│   └── shard.js             # Sharding entry point (Sharding Mode)
+├── .env                     # Private credentials (Token, IDs, DB URI)
+├── package.json             # App dependencies & scripts
+└── README.md                # This beautiful documentation
 ```
 
-5. **Run your bot in normal mode: (otherwise see [sharding mode](#application-sharding))**
-```shell
+---
+
+## 🚀 Getting Started
+
+### 📋 Prerequisites
+*   [Node.js](https://nodejs.org/) **v16.9.1** or newer (Recommended: v20+ / v24+)
+*   A Discord Bot Token (Create one on the [Discord Developer Portal](https://discord.com/developers/applications))
+
+### 🔧 Installation
+1.  **Clone the Repository**:
+    ```bash
+    git clone https://github.com/agonkolgeci/discord-handler-js.git
+    cd discord-handler-js
+    ```
+2.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Setup Environment Variables**:
+    Create a `.env` file in the root directory (or edit the existing one) with your credentials:
+    ```env
+    CLIENT_TOKEN=YOUR_DISCORD_BOT_TOKEN
+    CLIENT_ID=YOUR_APPLICATION_ID
+    MONGO_DB_URI=YOUR_MONGODB_ATLAS_URI # Optional
+    ```
+4.  **Configure Bot Settings**:
+    Adjust non-sensitive settings in [src/resources/config.js](file:///Users/agon/Development/discord-handler-js/src/resources/config.js):
+    ```javascript
+    export default {
+        project: {
+            title: "discord-handler-js",
+            description: "An optimized Discord bot structure...",
+            version: "v14"
+        },
+        messages: {
+            formatter: {
+                success: "✅ {message}",
+                info: "📌 {message}",
+                error: "❌ {message}"
+            }
+        },
+        remotes: {
+            mongodb: false // Set to true to connect using MONGO_DB_URI
+        }
+    };
+    ```
+
+---
+
+## 🏃 Run Modes
+
+### 🟢 Normal Mode
+Ideal for development and standard single-process bots:
+```bash
 node src/index.js
 ```
 
-## Application Sharding
-
-To run your application in sharding mode:
-```shell
+### 🌀 Sharding Mode
+Recommended for production and larger bots to manage multi-process scaling:
+```bash
 node src/shard.js
 ```
 
-## Application Commands
+---
 
-### Slash commands / User and Message contexts
-You can implement various commands in the same file.
+## 🛠️ Usage & Architecture
 
-```ts
+### 1. Application Commands
+Add files containing command objects exported as an array inside any subfolder under `src/commands/`.
+
+```javascript
+import { SlashCommandBuilder } from "discord.js";
+
 export default [
     {
-        structure: SlashCommandBuilder | ContextMenuCommandBuilder,
+        structure: new SlashCommandBuilder()
+            .setName("ping")
+            .setDescription("Replies with Pong!"),
       
-        onCommand: async(client, interaction) => {
-            await interaction.reply(`Command ${interaction.commandName} used by ${interaction.user} !`);
+        /**
+         * @param client {ExtendedClient} - Custom Client instance
+         * @param interaction {CommandInteraction} - The command interaction
+         */
+        onCommand: async (client, interaction) => {
+            await interaction.reply("🏓 Pong!");
         }
-    },
-
-    ... // More commands
-]
+    }
+];
 ```
 
-## Application Components
+### 2. Interactive Components
+Components are captured by their `customId` and handled dynamically inside any subfolder under `src/components/`.
 
-### Buttons / Modals / Selects Menus
-You can implement various components in the same file.
-
-```ts
+```javascript
 export default [
     {
-        customId: string,
+        customId: "example-button",
 
-        onButton: async(client, interaction) => {
-            await interaction.reply(`Button ${interaction.customId} used by ${interaction.user} !`);
-        },
-      
-        onModalSubmit: async(client, interaction) => {
-            await interaction.reply(`Modal ${interaction.customId} submited by ${interaction.user} !`);
-        },
-
-        onSelectMenu: async(client, interaction) => {
-            await interaction.reply(`Select Menu ${interaction.customId} used by ${interaction.user} !`);
+        /**
+         * @param client {ExtendedClient}
+         * @param interaction {ButtonInteraction}
+         */
+        onButton: async (client, interaction) => {
+            await interaction.reply({
+                content: "You clicked the button!",
+                ephemeral: true
+            });
         }
-    },
-
-    ... // More components
-]
+    }
+];
 ```
+> Supported listeners: `onButton`, `onModalSubmit`, `onSelectMenu`.
 
-## Application Events
-You can implement various events in the same file.
+### 3. Event Handling
+Events are dynamically registered on the client. Place event files under subfolders of `src/events/`.
 
-Note that you must replace `...args` with the event arguments.
-
-```ts
+```javascript
 export default [
     {
-        name: string,
+        name: "ready",
         once: true,
-      
-        onEvent: async(client, ...args) => {
-            await client.logger.log("info", `Event ${name} called !`);
-        }
-    },
 
-    ... // More events
-]
+        /**
+         * @param client {ExtendedClient}
+         */
+        onEvent: async (client) => {
+            client.logger.log("success", `Logged in as @${client.user.tag}!`);
+        }
+    }
+];
 ```
 
-## Custom Logger
-discord-handler-js uses a custom logger system (using colors thanks to [chalk](https://www.npmjs.com/package/chalk)).
+---
 
-> You can configure it from the [Logger Module](src/utils/Logger.js)
+## 🎨 Utilities & Helpers
 
-- Import the Logger Module: `import logger from "path/to/logger.js";`
+### 📝 Client Message Formatter
+Use the built-in formatter from the client to unify the visual style of your user-facing responses:
+```javascript
+await interaction.reply({
+    content: client.formatter.format("success", "Operation completed successfully!"),
+    ephemeral: true
+});
+```
 
-## Client Message Formatter
-discord-handler-js uses a message formatting system intended for users.
+### 🪵 Custom Logger
+Use the client-level color-coded logging system directly in your code:
+```javascript
+client.logger.log("info", "Synchronizing cache...");
+client.logger.log("success", "Caching complete!");
+client.logger.log("warn", "High memory usage detected >> Optimization recommended.");
+```
 
-> You can configure it from the [configuration](src/resources/config.js)
+---
 
-- Use from Extended Client `ExtendedClient#formatter`
+## 📄 License
+This project is licensed under the **GNU General Public License v3.0** - see the [LICENSE](LICENSE) file for details.
 
-## MongoDB (Optional)
-discord-handler-js lets you open a connection to a [MongoDB](https://www.mongodb.com/fr-fr).
-
-> - Configure it from the [.env](.env)
-> - Enable it from the [configuration](src/resources/config.js)
-
-## Licence
-This project is published under the [GNU General Public License v^3.0](LICENSE). You can download, modify or redistribute - even commercially - this software freely, as long as you specify that your work is a reworking of this project. For more details, please refer to the [license text](LICENSE).
-
-## Credits
-- Inspiration from [DiscordJS-V14-Bot-Template](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template)
+## 🤝 Credits & Support
+*   Created by [Agon KOLGECI](https://github.com/agonkolgeci)
+*   Inspired by [DiscordJS-V14-Bot-Template](https://github.com/TFAGaming/DiscordJS-V14-Bot-Template)
