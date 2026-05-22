@@ -1,13 +1,13 @@
-# 🤖 Discord Handler JS (v14)
+# 🤖 Discord.js Bot Template (v14)
 
-<img src="https://img.shields.io/github/license/agonkolgeci/discord-handler-js?style=for-the-badge&color=blue" alt="License" />
+<img src="https://img.shields.io/github/license/agonkolgeci/discord-js-bot-template?style=for-the-badge&color=blue" alt="License" />
 <img src="https://img.shields.io/badge/node.js-%3E%3D%2016.9.1-green?style=for-the-badge&logo=node.js" alt="Node.js Version" />
 <img src="https://img.shields.io/badge/discord.js-v14.26.4-5865F2?style=for-the-badge&logo=discord" alt="Discord.js Version" />
 <img src="https://img.shields.io/badge/database-mongoose-red?style=for-the-badge&logo=mongodb" alt="Database Mongoose" />
 
 ---
 
-**Discord Handler JS** is an ultra-optimized, production-ready Discord bot structure/template designed for **Discord.js v14**. Utilizing **ES6 modules**, this boilerplate handles commands, components (buttons, modals, select menus), and events dynamically, enabling you to build stable, scalable, and responsive Discord bots in minutes.
+**Discord.js Bot Template** is an ultra-optimized, production-ready Discord bot structure/template designed for **Discord.js v14**. Utilizing **ES6 modules**, this boilerplate handles commands, components (buttons, modals, select menus), and events dynamically, enabling you to build stable, scalable, and responsive Discord bots in minutes.
 
 ## ✨ Key Features
 
@@ -25,7 +25,7 @@
 ## 📂 Project Structure
 
 ```text
-discord-handler-js/
+discord-js-bot-template/
 ├── .github/
 │   └── dependabot.yml       # Automatic weekly dependency updates
 ├── src/
@@ -55,8 +55,8 @@ discord-handler-js/
 ### 🔧 Installation
 1.  **Clone the Repository**:
     ```bash
-    git clone https://github.com/agonkolgeci/discord-handler-js.git
-    cd discord-handler-js
+    git clone https://github.com/agonkolgeci/discord-js-bot-template.git
+    cd discord-js-bot-template
     ```
 2.  **Install Dependencies**:
     ```bash
@@ -70,11 +70,11 @@ discord-handler-js/
     MONGO_DB_URI=YOUR_MONGODB_ATLAS_URI # Optional
     ```
 4.  **Configure Bot Settings**:
-    Adjust non-sensitive settings in [src/resources/config.js](file:///Users/agon/Development/discord-handler-js/src/resources/config.js):
+    Adjust non-sensitive settings in [src/resources/config.js](file:///Users/agon/Development/discord-js-bot-template/src/resources/config.js):
     ```javascript
     export default {
         project: {
-            title: "discord-handler-js",
+            title: "discord-js-bot-template",
             description: "An optimized Discord bot structure...",
             version: "v14"
         },

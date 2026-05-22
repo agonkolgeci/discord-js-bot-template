@@ -1,10 +1,10 @@
 export default {
     project: {
-        title: "discord-handler-js",
-        description: "discord-handler-js is an optimized Discord bot structure that lets you easily create your own Discord bot.",
+        title: "discord-js-bot-template",
+        description: "discord-js-bot-template is an optimized Discord bot structure that lets you easily create your own Discord bot.",
         authors: [ "Agon KOLGECI" ],
 
-        url: "https://github.com/agonkolgeci/discord-handler-js",
+        url: "https://github.com/agonkolgeci/discord-js-bot-template",
         version: "v14"
     },
 

@@ -1,8 +1,8 @@
 /**
- * discord-handler-js v14 - NORMAL MODE
+ * discord-js-bot-template v14 - NORMAL MODE
  *
- * discord-handler-js is an optimized Discord bot structure that lets you easily create your own Discord bot.
- * https://github.com/agonkolgeci/discord-handler-js
+ * discord-js-bot-template is an optimized Discord bot structure that lets you easily create your own Discord bot.
+ * https://github.com/agonkolgeci/discord-js-bot-template
  */
 
 import ExtendedClient from "./structure/ExtendedClient.js";

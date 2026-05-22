@@ -1,6 +1,6 @@
 {
-  "name": "discord-js-handler",
-  "description": "discord-handler-js is a Discord bot structure/template that allows you to create a stable, optimized bot.",
+  "name": "discord-js-bot-template",
+  "description": "discord-js-bot-template is a Discord bot structure/template that allows you to create a stable, optimized bot.",
   "version": "v14",
   "author": "Agon KOLGECI",
   "type": "module",

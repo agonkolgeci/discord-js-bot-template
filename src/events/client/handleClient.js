@@ -16,7 +16,7 @@ export default [
         onEvent: async(client) => {
             client.user.setPresence({
                 activities: [{
-                    name: "discord-handler-js",
+                    name: "discord-js-bot-template",
                     type: 3
                 }],
                 status: "online",

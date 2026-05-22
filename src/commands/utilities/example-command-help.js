@@ -11,7 +11,7 @@ export default [
         structure:
             new SlashCommandBuilder()
                 .setName("help")
-                .setDescription("Learn more about discord-handler-js."),
+                .setDescription("Learn more about discord-js-bot-template."),
 
         /**
          *
@@ -27,7 +27,7 @@ export default [
             await interaction.reply({
                 embeds: [
                     new EmbedBuilder()
-                        .setTitle("discord-handler-js")
+                        .setTitle("discord-js-bot-template")
                         .setDescription(project["description"])
                         .setURL(project["url"])
                         .setColor("#263040")
