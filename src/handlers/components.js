@@ -22,7 +22,7 @@ export default {
                         continue;
                     }
 
-                    if(client.collection.components.has(component.commandId)) {
+                    if(client.collection.components.has(component.customId)) {
                         logger.log("warn", `Unable to retrieve component '${dir}/${file}#${component.customId}' because a component under its id already exists.`);
 
                         continue;

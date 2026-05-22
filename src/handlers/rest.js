@@ -25,7 +25,7 @@ export default {
 
             logger.log("success", "Successfully deployed application commands to the Discord API.");
         } catch (exception) {
-            logger.log("error",`Unable to deployed application commands to the Discord API. >> ${exception}`);
+            logger.log("error",`Unable to deploy application commands to the Discord API. >> ${exception}`);
         }
     }
 }
